@@ -1,0 +1,3 @@
+default: --format pretty --language pt
+html_report: --format progress --format html --out=features_report.html features  
+

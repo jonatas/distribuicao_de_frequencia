@@ -1,0 +1,7 @@
+h1. Funções matemáticas matéria de estatística
+
+Exemplos conforme o conteúdo passado em aula. Para rodar os testes e ver o exemplo dos problemas use:
+
+<code>
+   cucumber --profile default features/*.feature
+</code>
