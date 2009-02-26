@@ -1,4 +1,4 @@
-Funções matemáticas matéria de estatística
+h1. Funções matemáticas matéria de estatística
 
 Exemplos conforme o conteúdo passado em aula. Para rodar os testes e ver os exemplos dos problemas use:
 
