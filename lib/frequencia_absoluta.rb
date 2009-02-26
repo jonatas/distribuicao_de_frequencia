@@ -28,6 +28,8 @@ class Distribuicao
   end
 
   # frequencia_absoluta = numero_de_vezes_do_elemento
+  # Frequências relativas (fri) são os valores das razões entre as frequências simples e a frequência total:
+  # ∑ fi = n
   def calcular_frequencia_absoluta 
     @frequencia_absoluta = {}
     @elementos.group_by{|e| e}.each{|e,v| @frequencia_absoluta[e] = v.length}
@@ -35,16 +37,22 @@ class Distribuicao
   end
 
   # frequencia_relativa = frequencia_absoluta/sum(frequencia_absoluta)
+  # Freqüências relativas (fri) são os valores das razões entre as freqüências simples e a freqüência total:
+  # fri = fi /∑ fi
   def calcular_frequencia_relativa
     @frequencia_relativa = {}
     @frequencia_absoluta.each{|elemento, frequencia_absoluta| @frequencia_relativa[elemento] = (frequencia_absoluta.to_f / soma_frequencia_absoluta.to_f)} 
   end
 
+  # Percentual baseado na frequencia relativa 
   def calcular_frequencia_percentual
     @frequencia_percentual = {}
     @frequencia_relativa.each{|elemento, fr| @frequencia_percentual[elemento] = (fr * 100)} 
+    @frequencia_percentual
   end
 
+  #Freqüência acumulada (Fi) é o total das freqüências de todos os valores inferiores ao limite superior do intervalo de uma dada classe:
+  #Fk = f1 + f2 + ... + fk   ou   Fk = ∑ fi (i = 1, 2, ..., k)
   def frequencia_acumulada(intervalo)
     frequencia_absoluta[primeiro_elemento..intervalo.last]
   end
