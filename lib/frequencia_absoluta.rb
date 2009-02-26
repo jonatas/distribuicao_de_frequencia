@@ -21,7 +21,6 @@ class Distribuicao
     calcular_frequencia_relativa
     calcular_frequencia_percentual
     @frequencia_absoluta.extend SomaItensDoHashQuandoIntervalo
-
   end
   def numero_da_classe
     # raiz quadrada dos elementos
@@ -46,6 +45,9 @@ class Distribuicao
     @frequencia_relativa.each{|elemento, fr| @frequencia_percentual[elemento] = (fr * 100)} 
   end
 
+  def frequencia_acumulada(intervalo)
+    frequencia_absoluta[primeiro_elemento..intervalo.last]
+  end
 
   def to_s
 
@@ -62,9 +64,20 @@ class Distribuicao
     @frequencia_absoluta.values.inject(0){|sum, e| sum += e ; sum}
   end
 
+  def elementos_ordenado
+    elementos.uniq.sort
+  end
+
   def amplitude_total
-    ordenado = elementos.uniq.sort
-    ordenado.last.to_f - ordenado.first.to_f
+    ultimo_elemento.to_f - primeiro_elemento.to_f
+  end
+
+  def primeiro_elemento 
+    elementos_ordenado.first
+  end
+
+  def ultimo_elemento 
+    elementos_ordenado.last
   end
 end
 

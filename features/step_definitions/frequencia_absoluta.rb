@@ -27,3 +27,6 @@ end
 Then /^deve existir uma faixa de (\d+) a (\d+) com (\d+)$/ do |inicia, termina, resultado_esperado|
   @distribuicao.frequencia_absoluta[inicia..termina].should be == resultado_esperado.to_i
 end
+Then /^deve existir uma frequencia acumulada de (\d+) até a faixa de (\d+) a (\d+)$/ do|resultado_esperado, inicia, termina|
+  @distribuicao.frequencia_acumulada(inicia..termina).should be == resultado_esperado.to_i
+end

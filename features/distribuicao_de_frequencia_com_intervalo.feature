@@ -7,6 +7,7 @@ Funcionalidade: Encontrar uma frequência absoluta de um intervalo de elementos.
   Quando calcular a frequencia absoluta
   Então deve existir uma faixa de 20 a 21 com 15
   Então deve existir uma faixa de 22 a 25 com 25
+  E deve existir uma frequencia acumulada de 40 até a faixa de 22 a 25
 
 
 
