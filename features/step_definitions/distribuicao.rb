@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'spec'
-require File.dirname(__FILE__) + '/../../lib/frequencia_absoluta.rb'
+require File.dirname(__FILE__) + '/../../lib/distribuicao.rb'
 
 
 Given /^as idades (.*)$/ do |numeros|
